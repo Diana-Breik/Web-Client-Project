@@ -23,6 +23,7 @@ public class ProductService {
     public Product addProduct(NewProduct newProduct) {
 
         Product product = new Product(
+
                 UUID.randomUUID().toString(),
                 newProduct.title(),
                 newProduct.price()
