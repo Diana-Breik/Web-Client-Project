@@ -19,4 +19,41 @@ public class RickUndMortyService {
 
         return response.getBody();
     }
+
+
+    public RickUndMortyCharacter getCharacterById(String id) {
+        String uriString = "/" + id;
+        ResponseEntity<RickUndMortyCharacter> responseEntity = webClient
+                .get()
+                .uri(uriString)
+                .retrieve()
+                .toEntity(RickUndMortyCharacter.class)
+                .block();
+        return responseEntity.getBody();
+
+    }
+
+
+     public List<RickUndMortyCharacter> getCharactersByStatus(String status) {
+        String newUri = "?status=" + status;
+        ResponseEntity<RickUndMortyCharacterResponse> responseEntity = webClient
+                .get()
+                .uri(newUri)
+                .retrieve()
+                .toEntity(RickUndMortyCharacterResponse.class)
+                .block();
+        return responseEntity.getBody().results();
+    }
+/*
+    public int getStatisticForSpecies(String request, String species) {
+        String newUri = "?status=" + request + "&species=" + species;
+        ResponseEntity<RickAndMortyApiResponse> responseEntity = webClient
+                .get()
+                .uri(newUri)
+                .retrieve()
+                .toEntity(RickAndMortyApiResponse.class)
+                .block();
+        return responseEntity.getBody().info().count();
+    }
+     */
 }
