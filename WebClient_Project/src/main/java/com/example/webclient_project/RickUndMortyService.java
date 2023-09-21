@@ -9,7 +9,7 @@ import java.util.List;
 @Service
 public class RickUndMortyService {
     public final WebClient webClient = WebClient.create("https://rickandmortyapi.com/api/character");
-    public RickUndMortyCharacterResponse getAllCharacters(){
+    public List<RickUndMortyCharacter> getAllCharacters(){
 
         ResponseEntity<RickUndMortyCharacterResponse> response = webClient
                 .get()
@@ -17,7 +17,7 @@ public class RickUndMortyService {
                 .toEntity(RickUndMortyCharacterResponse.class)
                 .block();
 
-        return response.getBody();
+        return response.getBody().results();
     }
 
 

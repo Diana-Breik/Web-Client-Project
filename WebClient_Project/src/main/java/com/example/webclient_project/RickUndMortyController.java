@@ -13,7 +13,7 @@ public class RickUndMortyController {
     private final RickUndMortyService rickUndMortyService;
 
     @GetMapping
-    RickUndMortyCharacterResponse getAllCharacters(){
+    List<RickUndMortyCharacter> getAllCharacters(){
         return rickUndMortyService.getAllCharacters();
     }
 
