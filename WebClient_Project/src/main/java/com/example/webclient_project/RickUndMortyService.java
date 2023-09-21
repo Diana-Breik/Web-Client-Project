@@ -44,16 +44,16 @@ public class RickUndMortyService {
                 .block();
         return responseEntity.getBody().results();
     }
-/*
+
     public int getStatisticForSpecies(String request, String species) {
         String newUri = "?status=" + request + "&species=" + species;
-        ResponseEntity<RickAndMortyApiResponse> responseEntity = webClient
+        ResponseEntity<RickUndMortyCharacterResponse> responseEntity = webClient
                 .get()
                 .uri(newUri)
                 .retrieve()
-                .toEntity(RickAndMortyApiResponse.class)
+                .toEntity(RickUndMortyCharacterResponse.class)
                 .block();
         return responseEntity.getBody().info().count();
     }
-     */
+
 }

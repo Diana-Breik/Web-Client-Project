@@ -28,10 +28,10 @@ public class RickUndMortyController {
     List<RickUndMortyCharacter> getCharactersByStatus(@RequestParam String status) {
         return rickUndMortyService.getCharactersByStatus(status);
     }
-/*
+
     @GetMapping("species-statistic")
     int getStatisticForSpecies(@RequestParam String status, @RequestParam String species) {
-        return rickAndMortyCharacterService.getStatisticForSpecies(status, species);
+        return rickUndMortyService.getStatisticForSpecies(status, species);
     }
-     */
+
 }
