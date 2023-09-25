@@ -12,7 +12,7 @@ function functionAge():void{
         console.log("Nein, age ist nicht größer als 18")
     }
 }
-console.log(functionAge())
+functionAge()
 
 let score:number = 0
 //Gebt 'Score ist verfügbar.' aus, wenn 'score' einen Wert ungleich 0 hat.
@@ -52,3 +52,17 @@ else{
 if(isAdmin === false){
     console.log("isAdmin ist false.")
 }
+
+function weihnachtsbaum(zahl:number):void {
+    //das Baum von Oben
+    for(let i =1; i<= zahl; i++){
+         let spaces: string = ' '.repeat(zahl-i)
+         let stars :string = '*'.repeat(2* i -1)
+         console.log(spaces+stars)
+    }
+    //der Stamm des Baumes
+    for(let i =1; i<= zahl; i++){
+        console.log(' '.repeat(zahl - 1) + '*')
+    }
+}
+weihnachtsbaum(5)
